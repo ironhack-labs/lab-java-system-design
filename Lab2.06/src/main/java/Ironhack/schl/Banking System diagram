@@ -1,0 +1,26 @@
+Class: User
+- username: String
+- password: String
+
+Class: Account
+- accountId: String
+- balance: Money
+- isFrozen: boolean
+
+Class: Transaction
+- transactionId: String
+- amount: Money
+- date: Date
+
+Class: Money
+- amount: double
+- currency: String
+
+Class: Admin
+- username: String
+- password: String
+
+Associations:
+- User "1" -- "0..*" Account
+- Account "1" -- "0..*" Transaction
+- Admin "1" -- "0..*" Account
